@@ -1,0 +1,235 @@
+/* style.css */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.product-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-link {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;;
+}
+
+.overlay-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-link:hover .product-image,
+.image-link:focus .product-image {
+  transform: scale(1.1);
+}
+
+.image-link:hover .overlay-logo,
+.image-link:focus .overlay-logo {
+  opacity: 1;
+}
+
+.product-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.product-name {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.product-description {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.button-color {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 15px;
+}
+
+.button-color:hover,
+.button-color:focus {
+  background-color: #e91e63;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  transition: all 0.3s ease;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-button {
+  float: right;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+/* تصفية الخلفية عند فتح النافذة المنبثقة */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* إعدادات عامة للنافذة المنبثقة */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+}
+
+/* زر إغلاق النافذة المنبثقة */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* عنوان النافذة المنبثقة */
+.modal-content h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* حقول الإدخال داخل النافذة المنبثقة */
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* أزرار النافذة المنبثقة */
+.modal-content button {
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #e91e63;
+}
+
+/* تنظيم عناصر تحديد الكمية */
+.quantity-controls button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.quantity-controls span {
+  font-size: 1.2rem;
+}
+
+/* تحسين الجماليات للنوافذ المنبثقة */
+.products-container {
+  padding: 20px;
+}
+
+.product-box {
+  margin-bottom: 20px;
+}
+
+.product-info {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.add-to-cart-button {
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #e91e63;
+}
+
+/* قد تحتاج إلى تعديل هذه القواعد وفقًا للبنية الكاملة لصفحتك وألوان العلامة التجارية الخاصة بك. */
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay-logo {
+    width: 30px;
+  }
+}
